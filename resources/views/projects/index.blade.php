@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        {{-- !let message disappear after 10 seconds && fix padding of message --}}
+        {{-- !fix message disappear after 10 seconds && fix padding of message --}}
         @if (session()->has('message'))
             <div class="m-auto mt-10 w-4/5 pl-2">
                 <p class="mb-4 w-2/6 rounded-2xl bg-green-500 p-4 text-gray-50">
@@ -35,15 +35,15 @@
         <div class="m-4 grid gap-4 p-5 sm:p-16 md:grid-cols-2 lg:grid-cols-5">
             @foreach ($posts as $post)
                 <a href="/projects/{{ $post->slug }}"
-                    class="mb-3 flex transform flex-col items-center rounded-lg bg-gradient-to-br from-green-600 to-blue-700 shadow-md transition duration-500 hover:scale-105 hover:grayscale-0 focus:outline-none focus:ring-4 md:max-w-xl md:flex-row md:grayscale lg:flex-col">
+                    class="mb-3 flex transform flex-col items-center rounded-lg bg-transparent transition duration-500 hover:scale-105 hover:grayscale-0 focus:outline-none focus:ring-4 md:max-w-xl md:flex-row md:grayscale lg:flex-col">
                     <img class="h-96 w-full rounded-lg object-cover md:h-full md:w-3/5 lg:h-full lg:w-full"
                         src="{{ asset('gallery/' . $post->image_path) }}" alt="{{ $post->title }}">
                     <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 font-bold tracking-tight text-white text-sm lg:text-xl">{{ $post->title }}</h5>
+                        <h5 class="mb-2 font-bold tracking-tight text-gray-100 text-sm lg:text-xl">{{ $post->title }}</h5>
                         <span class="mb-2 text-xs text-gray-200">
                             Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
                         </span>
-                        <p class="mb-3 font-normal text-white text-xs lg:text-sm"><span
+                        <p class="mb-3 font-normal text-gray-50 text-xs lg:text-sm"><span
                                 class="inline-block max-w-[15ch] overflow-hidden text-ellipsis whitespace-nowrap">{{ $post->description }}</span>
                         </p>
                     </div>

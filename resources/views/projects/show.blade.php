@@ -50,7 +50,7 @@
                     Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
                     </p>
             </div>
-            <p class="mt-5 font-normal text-lg text-center lg:text-left lg:text-2xl lg:w-[40%] text-black">{{ $post->description }}</p>
+            <p class="mt-5 font-normal text-lg text-center lg:text-left lg:text-lg lg:w-[40%] text-black">{{ $post->description }}</p>
         </div>
 
 </div>
